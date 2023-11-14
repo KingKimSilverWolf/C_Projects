@@ -1,0 +1,705 @@
+Script started on 2023-11-07 18:30:17-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [K]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ Conta[K[K[K[K[K[7mcat[27mcat[C[Kt Contact.h
+[?2004l/*
+ * Kim Magidhi
+ * Contact.h - Header file for the Contact class.
+ *
+ * This file defines the Contact class, which shows a contact
+ * with properties like category, first name, last name, street address,
+ * zip code, city, and phone number. It also gives methods to set and get
+ * these properties and to convert contact information to a formatted string.
+ *
+ * Date: 11/07/2023
+ */
+
+#ifndef CONTACT_H
+#define CONTACT_H
+
+#include <QString>
+
+class Contact {
+// Private variables 
+private:
+    int category;
+    QString firstName;
+    QString lastName;
+    QString streetAddress;
+    QString zipCode;
+    QString city;
+    QString phoneNumber;
+
+public:
+    // Default constructor
+    Contact();
+
+    // Parameterized constructor
+    Contact(int category, const QString& firstName, const QString& lastName, 
+    const QString& streetAddress, const QString& zipCode, const QString& city, 
+    const QString& phoneNumber);
+
+    // Setter and Getter methods 
+    void setCategory(int category);
+    int getCategory() const;
+    void setFirstName(const QString& firstName);
+    QString getFirstName() const;
+    void setLastName(const QString& lastName);
+    QString getLastName() const;
+    void setStreetAddress(const QString& streetAddress);
+    QString getStreetAddress() const;
+    void setZipCode(const QString& zipCode);
+    QString getZipCode() const;
+    void setCity(const QString& city);
+    QString getCity() const;
+    void setPhoneNumber(const QString& phoneNumber);
+    QString getPhoneNumber() const;
+
+    // Convert the contact information to a formatted string
+    QString toString() const;
+};
+
+#endif 
+
+
+[?2004h]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [7mcat[27mcat Contact.cpp
+[?2004l/*
+ * Kim Magidhi
+ * Contact.cpp - Implementation file for the Contact class.
+ *
+ * This file contains the implementations of the methods defined in the Contact class.
+ *
+ * Date: 11/07/2023
+*/
+
+#include "Contact.h"
+
+// Default constructor (Initializes a Contact with empty values)
+Contact::Contact() {
+    category = 0;
+    firstName = "";
+    lastName = "";
+    streetAddress = "";
+    zipCode = "";
+    city = "";
+    phoneNumber = "";
+}
+
+// Parameterized constructor (Initializes a Contact with specified values)
+Contact::Contact(int category, const QString& firstName, const QString& lastName, const QString& streetAddress, const QString& zipCode, const QString& city, const QString& phoneNumber) {
+    this->category = category;
+    this->firstName = firstName;
+    this->lastName = lastName;
+    this->streetAddress = streetAddress;
+    this->zipCode = zipCode;
+    this->city = city;
+    this->phoneNumber = phoneNumber;
+}
+
+// Setter for the category property.
+void Contact::setCategory(int category) {
+    this->category = category;
+}
+
+// Getter for the category property.
+int Contact::getCategory() const {
+    return category;
+}
+
+// Setter for the first name property.
+void Contact::setFirstName(const QString& firstName) {
+    this->firstName = firstName;
+}
+
+// Getter for the first name property.
+QString Contact::getFirstName() const {
+    return firstName;
+}
+
+// Setter for the last name property.
+void Contact::setLastName(const QString& lastName) {
+    this->lastName = lastName;
+}
+
+// Getter for the last name property.
+QString Contact::getLastName() const {
+    return lastName;
+}
+
+// Setter for the street address property.
+void Contact::setStreetAddress(const QString& streetAddress) {
+    this->streetAddress = streetAddress;
+}
+
+// Getter for the street address property.
+QString Contact::getStreetAddress() const {
+    return streetAddress;
+}
+
+// Setter for the zip code property.
+void Contact::setZipCode(const QString& zipCode) {
+    this->zipCode = zipCode;
+}
+
+// Getter for the zip code property.
+QString Contact::getZipCode() const {
+    return zipCode;
+}
+
+// Setter for the city property.
+void Contact::setCity(const QString& city) {
+    this->city = city;
+}
+
+// Getter for the city property.
+QString Contact::getCity() const {
+    return city;
+}
+
+// Setter for the phone number property.
+void Contact::setPhoneNumber(const QString& phoneNumber) {
+    this->phoneNumber = phoneNumber;
+}
+
+// Getter for the phone number property.
+QString Contact::getPhoneNumber() const {
+    return phoneNumber;
+}
+
+// Converts the Contact object to a formatted string.
+QString Contact::toString() const {
+    return "Category: " + QString::number(category) +
+           ", First Name: " + firstName +
+           ", Last Name: " + lastName +
+           ", Street Address: " + streetAddress +
+           ", Zip Code: " + zipCode +
+           ", City: " + city +
+           ", Phone Number: " + phoneNumber;
+}
+
+[?2004h]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [7mcat[27mcat ContactFactory.h
+[?2004l/*
+ * Kim Magidhi
+ * ContactFactory.h - Header file for the ContactFactory class.
+ *
+ * This header file defines the ContactFactory class, which is responsible for generating
+ * random Contact objects and adding them to a ContactList. It declares the class interface,
+ * including the constructor, a method for generating random contacts, and the >> operator
+ * overload to add contacts to a ContactList.
+ *
+ * Date: 11/07/2023
+ */
+ 
+#ifndef CONTACTFACTORY_H
+#define CONTACTFACTORY_H
+
+#include "ContactList.h"
+
+class ContactFactory {
+
+public:
+    ContactFactory();                // Constructor for the ContactFactory class.
+    Contact generateRandomContact(); // Generates a random Contact object.
+    void operator>>(ContactList& cl); // Overloaded >> operator to add contacts to a ContactList.
+};
+
+#endif
+
+[?2004h]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [7mcat[27mcat ContactFactory.cpp
+[?2004l/*
+ * Kim Magidhi
+ * ContactFactory.cpp - Implementation file for the ContactFactory class.
+ *
+ * This file contains the implementation of methods in the ContactFactory class. 
+ * It also generates random contacts with different properties, 
+ * such as category, names, addresses, and phone numbers. These generated contacts are 
+ * then added to a ContactList.
+ *
+ * Date: 11/07/2023
+ */
+
+#include "ContactFactory.h"
+#include "ContactList.h"
+#include <cstdlib>
+#include <vector> // Lets me use a dynamic array-like data structure that can grow or shrink in size as needed
+#include <string>
+
+// Constructor for ContactFactory class
+ContactFactory::ContactFactory() {
+    
+}
+
+// Generate a random contact with various properties and return it
+Contact ContactFactory::generateRandomContact() {
+    Contact contact;
+
+    // Randomly select a category (friends, family, or work).
+    int randomCategory = rand() % 3; // Generates a random number between 0 and 2.
+
+    switch (randomCategory) {
+        case 0:
+            contact.setCategory(0); // Set the category to "friends"
+            break;
+        case 1:
+            contact.setCategory(1); // Set the category to "family"
+            break;
+        case 2:
+            contact.setCategory(2); // Set the category to "work"
+            break;
+        default:
+            contact.setCategory(0); // Default to "friends" category (0) in case of an unexpected value.
+            break;
+    }
+
+    // Select a random first name from the list of names.
+    std::vector<std::string> firstNames = {"John", "Mary", "David", "Linda", "Michael","Sarah", 
+    "Christopher", "Emily", "William", "Jessica", "Benjamin", "Olivia", "James", "Sophia", 
+    "Daniel", "Emma", "Andrew", "Mia", "Joseph", "Isabella", "Samuel", "Ava", "Matthew", 
+    "Grace", "Olivia", "Alexander", "Sophia", "Nicholas", "Abigail", "Ethan"};
+    int randomFirstNameIndex = rand() % firstNames.size();
+    contact.setFirstName(QString::fromStdString(firstNames[randomFirstNameIndex]));
+
+    // Select a random last name from the list of names.
+    std::vector<std::string> lastNames = {"Smith", "Johnson", "Williams", "Brown", "Jones",
+    "Smith", "Johnson", "Williams", "Brown", "Jones", "Davis", "Miller", "Wilson", "Moore", 
+    "Taylor", "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin", "Thompson", 
+    "Garcia", "Martinez", "Robinson"};
+    int randomLastNameIndex = rand() % lastNames.size();
+    contact.setLastName(QString::fromStdString(lastNames[randomLastNameIndex]));
+
+    // Select a random street address from the list of addresses.
+    std::vector<std::string> streetAddresses = {"123 Elm St", "456 Oak Ave", "789 Maple Rd", 
+    "101 Pine Ln", "234 Cedar Dr","3 Elm St", "42 Oak Ave", "7 Maple Rd", "101 Pine Ln", 
+    "23 Cedar Dr", "56 Pine St", "8 Birch Ave", "345 Oak Rd", "6 Maple Ln", "9 Pine Dr", 
+    "2 Birch St", "57 Elm Ave", "89 Oak Rd", "12 Maple Ln", "4 Cedar Dr", "78 Pine St", 
+    "10 Birch Ave", "34 Oak Rd", "67 Maple Ln", "90 Cedar Dr"};
+    int randomAddressIndex = rand() % streetAddresses.size();
+    contact.setStreetAddress(QString::fromStdString(streetAddresses[randomAddressIndex]));
+
+    // Generate a random 5-digit zip code.
+    std::string zipCode = "";
+    for (int i = 0; i < 5; ++i) {
+        int randomDigit = rand() % 10; // Random number between 0 and 9.
+        zipCode += std::to_string(randomDigit);
+    }
+    contact.setZipCode(QString::fromStdString(zipCode));
+
+    // Select a random city name from the list of cities.
+    std::vector<std::string> cityNames = {"New York", "Los Angeles", "Chicago", "Houston", 
+    "Miami", "San Francisco", "Dallas", "Phoenix", "Philadelphia", "Seattle", "Atlanta", 
+    "Denver", "Boston", "San Diego", "Austin", "Las Vegas", "Nashville", "Orlando", 
+    "Portland", "Detroit", "Minneapolis", "Charlotte", "San Antonio", "Baltimore", 
+    "Indianapolis", "New Orleans", "Sacramento", "Kansas City", "Jacksonville", "Columbus", 
+    "San Jose", "Raleigh", "Salt Lake City", "St. Louis", "Tampa", "Pittsburgh", 
+    "Cincinnati", "Milwaukee", "Memphis", "Omaha"};
+    int randomCityIndex = rand() % cityNames.size();
+    contact.setCity(QString::fromStdString(cityNames[randomCityIndex]));
+
+    // Generate a random phone number.
+    std::string phoneNumber = "555-";
+    for (int i = 0; i < 8; ++i) {
+        int randomDigit = rand() % 10; // Random number between 0 and 9.
+        phoneNumber += std::to_string(randomDigit);
+        if (i == 2 || i == 5) {
+            phoneNumber += "-"; // Add hyphens to the phone number.
+        }
+    }
+    contact.setPhoneNumber(QString::fromStdString(phoneNumber));
+
+    return contact;
+}
+
+// Overloaded operator to generate a random contact and add it to the ContactList
+void ContactFactory::operator>>(ContactList& cl) {
+    Contact contact = generateRandomContact();
+    cl.add(contact); // Add the generated contact to the ContactList.
+}
+
+[?2004h]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [7mcat[27mcat ContactList.h
+[?2004l/*
+ * Kim Magidhi
+ * ContactList.h - Header file for the ContactList class.
+ *
+ * Header file that defines the ContactList class, which represents a list of contact data.
+ *
+ * Date: 11/07/2023
+ */
+
+#ifndef CONTACTLIST_H
+#define CONTACTLIST_H
+
+#include <QStringList>
+#include "Contact.h"
+
+class ContactList {
+private:
+    QStringList contactData; // Store contact data as QStringList
+
+public:
+    ContactList();
+
+    // Method to add a contact to the list
+    void add(const Contact& contact);
+
+    // Method to remove a contact from the list
+    void remove(const Contact& contact);
+
+    // Method to get a list of phone numbers for contacts with the given category
+    QStringList getPhoneList(int category) const;
+
+    // Method to get a list of mailing information for contacts with the given category
+    QStringList getMailingList(int category) const;
+
+    // Method to get the number of contacts in the list
+    int size() const;
+
+    // Method to display the contents of the contact list
+    void display() const;
+};
+
+#endif
+
+[?2004h]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [7mcat[27mcat ContactList.cpp
+[?2004l/*
+ * Kim Magidhi
+ * ContactList.cpp - Implementation file for the ContactList class.
+ *
+ * This file contains the implementation of the ContactList class, which represents a list
+ * of contact data. It has methods for adding, removing, and getting contact information,
+ * as well as displaying the contact list. 
+ *
+ * Date: 11/07/2023
+ */
+
+#include "ContactList.h"
+#include "Contact.h"
+#include <QDebug>
+
+ContactList::ContactList() {
+    // Initialize the list by clearing it
+    contactData.clear();
+}
+
+void ContactList::add(const Contact& contact) {
+    // Add the contact's data to the list as a string
+    contactData.append(contact.toString());
+}
+
+void ContactList::remove(const Contact& contact) {
+    // Remove the contact's data from the list
+    contactData.removeAll(contact.toString());
+}
+
+QStringList ContactList::getPhoneList(int category) const {
+    QStringList phoneList;
+    for (const QString& contact : contactData) {
+        // Parse the contact data to check if it matches the category and add to the phone list
+        QStringList parts = contact.split(", ");
+        if (parts.size() > 0) {
+            QString categoryString = parts[0].right(parts[0].size() - 10); 
+            int contactCategory = categoryString.toInt();
+            if (contactCategory == category) {
+                phoneList.append(parts[1]); 
+            }
+        }
+    }
+    return phoneList;
+}
+
+QStringList ContactList::getMailingList(int category) const {
+    QStringList mailingList;
+    for (const QString& contact : contactData) {
+        // Parse the contact data to check if it matches the category and add to the mailing list
+        QStringList parts = contact.split(", ");
+        if (parts.size() > 0) {
+            QString categoryString = parts[0].right(parts[0].size() - 10); // Extract the category part
+            int contactCategory = categoryString.toInt();
+            if (contactCategory == category) {
+                mailingList.append(contact); // Add the whole contact to the mailing list
+            }
+        }
+    }
+    return mailingList;
+}
+
+int ContactList::size() const {
+    return contactData.size();
+}
+
+void ContactList::display() const {
+    for (const QString& contact : contactData) {
+        qDebug() << contact; 
+    }
+}
+
+[?2004h]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ C[K[7mcat[27mcat Contact-test.cpp
+[?2004l/*
+ * Kim Magidhi
+ * contact-test.cpp - Implementation file for testing the Contact class.
+ *
+ * This file contains the implementations of test cases and functions to test
+ * the Contact class. It covers tests things like creating, modifying, and displaying contact data.
+ *
+ * Date: 11/07/2023
+ */
+
+#include <iostream>
+#include "ContactFactory.h"
+#include "ContactList.h"
+#include <cstdlib>
+#include <ctime> // For seeding the time
+
+int main() {
+    ContactList contactList;
+    ContactFactory cf;
+
+    // Seed the random number generator with the current system time so we get new values 
+    std::srand(static_cast<unsigned>(std::time(nullptr)));
+
+    // Generate and add 10 random contacts to the ContactList.
+    for (int i = 0; i < 10; ++i) {
+        cf >> contactList;
+    }
+
+    // Display the original ContactList.
+    std::cout << "Original Contact List:\n";
+    contactList.display();  
+
+    // Test getPhoneList() and getMailingList() for categories 0, 1, and 2.
+    for (int categoryToQuery = 0; categoryToQuery <= 2; ++categoryToQuery) {
+        // Assign labels to each number.
+        std::string categoryLabel;
+        if (categoryToQuery == 0) {
+            categoryLabel = "friends";
+        } else if (categoryToQuery == 1) {
+            categoryLabel = "family";
+        } else if (categoryToQuery == 2) {
+            categoryLabel = "work";
+        }
+
+        // Get the phone list for the selected category.
+        QStringList phoneList = contactList.getPhoneList(categoryToQuery);
+
+        // Get the mailing list for the selected category.
+        QStringList mailingList = contactList.getMailingList(categoryToQuery);
+
+        // Display the results for the current category.
+        std::cout << "\nPhone List for Category " << categoryLabel << ":\n";
+        for (const QString& phoneInfo : phoneList) {
+            std::cout << phoneInfo.toStdString() << std::endl;
+        }
+
+        std::cout << "\nMailing List for Category " << categoryLabel << ":\n";
+        for (const QString& mailingInfo : mailingList) {
+            std::cout << mailingInfo.toStdString() << std::endl;
+        }
+    }
+
+    // Summarize the results.
+    std::cout << "\nSummary:\n";
+    std::cout << "Original Contact List Size: " << contactList.size() << std::endl;
+
+    // Add summary information for each category.
+    for (int categoryToQuery = 0; categoryToQuery <= 2; ++categoryToQuery) {
+        // Assign labels to each number.
+        std::string categoryLabel;
+        if (categoryToQuery == 0) {
+            categoryLabel = "friends";
+        } else if (categoryToQuery == 1) {
+            categoryLabel = "family";
+        } else if (categoryToQuery == 2) {
+            categoryLabel = "work";
+        }
+
+        QStringList phoneList = contactList.getPhoneList(categoryToQuery);
+        QStringList mailingList = contactList.getMailingList(categoryToQuery);
+        std::cout << "Phone List Size for Category " << categoryLabel << ": " << phoneList.size() << std::endl;
+        std::cout << "Mailing List Size for Category " << categoryLabel << ": " << mailingList.size() << std::endl;
+    }
+
+    return 0;
+}
+
+[?2004h]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [7mcat hw03.pro[27mcat hw03.pro
+[?2004l######################################################################
+# Automatically generated by qmake (3.1) Mon Nov 6 20:42:48 2023
+######################################################################
+
+TEMPLATE = app
+TARGET = hw03
+INCLUDEPATH += .
+
+# You can make your code fail to compile if you use deprecated APIs.
+# In order to do so, uncomment the following line.
+# Please consult the documentation of the deprecated API in order to know
+# how to port your code away from it.
+# You can also select to disable deprecated APIs only up to a certain version of Qt.
+#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+# Input
+HEADERS += Contact.h ContactFactory.h ContactList.h
+SOURCES += Contact-test.cpp Contact.cpp ContactFactory.cpp ContactList.cpp
+[?2004h]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [7mmake[27mmake
+[?2004lg++ -c -pipe -O2 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -I. -I. -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I. -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -o Contact-test.o Contact-test.cpp
+g++ -Wl,-O1 -o hw03 Contact-test.o Contact.o ContactFactory.o ContactList.o   /usr/lib/aarch64-linux-gnu/libQt5Gui.so /usr/lib/aarch64-linux-gnu/libQt5Core.so -lGL -lpthread   
+[?2004h]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [7m./hw03[27m./hw03
+[?2004lOriginal Contact List:
+"Category: 1, First Name: Mia, Last Name: Harris, Street Address: 789 Maple Rd, Zip Code: 38936, City: Sacramento, Phone Number: 555-117-966-90"
+"Category: 1, First Name: Mia, Last Name: White, Street Address: 89 Oak Rd, Zip Code: 26930, City: Miami, Phone Number: 555-206-177-00"
+"Category: 0, First Name: Mary, Last Name: Miller, Street Address: 4 Cedar Dr, Zip Code: 79561, City: San Diego, Phone Number: 555-205-086-72"
+"Category: 0, First Name: Isabella, Last Name: Smith, Street Address: 67 Maple Ln, Zip Code: 39510, City: Chicago, Phone Number: 555-125-843-43"
+"Category: 1, First Name: Matthew, Last Name: Martin, Street Address: 101 Pine Ln, Zip Code: 54635, City: Sacramento, Phone Number: 555-928-135-66"
+"Category: 0, First Name: Ava, Last Name: Smith, Street Address: 8 Birch Ave, Zip Code: 63831, City: Indianapolis, Phone Number: 555-688-008-47"
+"Category: 2, First Name: David, Last Name: Smith, Street Address: 9 Pine Dr, Zip Code: 89483, City: Kansas City, Phone Number: 555-396-938-79"
+"Category: 0, First Name: Nicholas, Last Name: Robinson, Street Address: 34 Oak Rd, Zip Code: 20200, City: Boston, Phone Number: 555-062-404-40"
+"Category: 0, First Name: William, Last Name: White, Street Address: 23 Cedar Dr, Zip Code: 73032, City: Houston, Phone Number: 555-114-298-71"
+"Category: 1, First Name: Olivia, Last Name: Moore, Street Address: 6 Maple Ln, Zip Code: 45189, City: Salt Lake City, Phone Number: 555-252-851-73"
+
+Phone List for Category friends:
+First Name: Mary
+First Name: Isabella
+First Name: Ava
+First Name: Nicholas
+First Name: William
+
+Mailing List for Category friends:
+Category: 0, First Name: Mary, Last Name: Miller, Street Address: 4 Cedar Dr, Zip Code: 79561, City: San Diego, Phone Number: 555-205-086-72
+Category: 0, First Name: Isabella, Last Name: Smith, Street Address: 67 Maple Ln, Zip Code: 39510, City: Chicago, Phone Number: 555-125-843-43
+Category: 0, First Name: Ava, Last Name: Smith, Street Address: 8 Birch Ave, Zip Code: 63831, City: Indianapolis, Phone Number: 555-688-008-47
+Category: 0, First Name: Nicholas, Last Name: Robinson, Street Address: 34 Oak Rd, Zip Code: 20200, City: Boston, Phone Number: 555-062-404-40
+Category: 0, First Name: William, Last Name: White, Street Address: 23 Cedar Dr, Zip Code: 73032, City: Houston, Phone Number: 555-114-298-71
+
+Phone List for Category family:
+First Name: Mia
+First Name: Mia
+First Name: Matthew
+First Name: Olivia
+
+Mailing List for Category family:
+Category: 1, First Name: Mia, Last Name: Harris, Street Address: 789 Maple Rd, Zip Code: 38936, City: Sacramento, Phone Number: 555-117-966-90
+Category: 1, First Name: Mia, Last Name: White, Street Address: 89 Oak Rd, Zip Code: 26930, City: Miami, Phone Number: 555-206-177-00
+Category: 1, First Name: Matthew, Last Name: Martin, Street Address: 101 Pine Ln, Zip Code: 54635, City: Sacramento, Phone Number: 555-928-135-66
+Category: 1, First Name: Olivia, Last Name: Moore, Street Address: 6 Maple Ln, Zip Code: 45189, City: Salt Lake City, Phone Number: 555-252-851-73
+
+Phone List for Category work:
+First Name: David
+
+Mailing List for Category work:
+Category: 2, First Name: David, Last Name: Smith, Street Address: 9 Pine Dr, Zip Code: 89483, City: Kansas City, Phone Number: 555-396-938-79
+
+Summary:
+Original Contact List Size: 10
+Phone List Size for Category friends: 5
+Mailing List Size for Category friends: 5
+Phone List Size for Category family: 4
+Mailing List Size for Category family: 4
+Phone List Size for Category work: 1
+Mailing List Size for Category work: 1
+[?2004h]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ ./hw03
+[?2004lOriginal Contact List:
+"Category: 2, First Name: Mary, Last Name: Williams, Street Address: 78 Pine St, Zip Code: 12210, City: Los Angeles, Phone Number: 555-315-002-29"
+"Category: 0, First Name: Benjamin, Last Name: White, Street Address: 12 Maple Ln, Zip Code: 19009, City: Pittsburgh, Phone Number: 555-222-661-47"
+"Category: 1, First Name: Joseph, Last Name: Davis, Street Address: 67 Maple Ln, Zip Code: 96656, City: Nashville, Phone Number: 555-917-715-54"
+"Category: 0, First Name: Sarah, Last Name: Robinson, Street Address: 12 Maple Ln, Zip Code: 28047, City: Jacksonville, Phone Number: 555-517-898-39"
+"Category: 0, First Name: Jessica, Last Name: Johnson, Street Address: 234 Cedar Dr, Zip Code: 55532, City: Dallas, Phone Number: 555-092-749-57"
+"Category: 1, First Name: Nicholas, Last Name: Brown, Street Address: 10 Birch Ave, Zip Code: 89759, City: Phoenix, Phone Number: 555-538-124-60"
+"Category: 1, First Name: Linda, Last Name: Smith, Street Address: 2 Birch St, Zip Code: 27444, City: San Jose, Phone Number: 555-319-313-99"
+"Category: 2, First Name: Mia, Last Name: Thompson, Street Address: 67 Maple Ln, Zip Code: 64645, City: Los Angeles, Phone Number: 555-033-390-81"
+"Category: 1, First Name: Michael, Last Name: Davis, Street Address: 23 Cedar Dr, Zip Code: 49742, City: Jacksonville, Phone Number: 555-717-106-66"
+"Category: 2, First Name: Sarah, Last Name: Davis, Street Address: 89 Oak Rd, Zip Code: 82335, City: Chicago, Phone Number: 555-353-298-66"
+
+Phone List for Category friends:
+First Name: Benjamin
+First Name: Sarah
+First Name: Jessica
+
+Mailing List for Category friends:
+Category: 0, First Name: Benjamin, Last Name: White, Street Address: 12 Maple Ln, Zip Code: 19009, City: Pittsburgh, Phone Number: 555-222-661-47
+Category: 0, First Name: Sarah, Last Name: Robinson, Street Address: 12 Maple Ln, Zip Code: 28047, City: Jacksonville, Phone Number: 555-517-898-39
+Category: 0, First Name: Jessica, Last Name: Johnson, Street Address: 234 Cedar Dr, Zip Code: 55532, City: Dallas, Phone Number: 555-092-749-57
+
+Phone List for Category family:
+First Name: Joseph
+First Name: Nicholas
+First Name: Linda
+First Name: Michael
+
+Mailing List for Category family:
+Category: 1, First Name: Joseph, Last Name: Davis, Street Address: 67 Maple Ln, Zip Code: 96656, City: Nashville, Phone Number: 555-917-715-54
+Category: 1, First Name: Nicholas, Last Name: Brown, Street Address: 10 Birch Ave, Zip Code: 89759, City: Phoenix, Phone Number: 555-538-124-60
+Category: 1, First Name: Linda, Last Name: Smith, Street Address: 2 Birch St, Zip Code: 27444, City: San Jose, Phone Number: 555-319-313-99
+Category: 1, First Name: Michael, Last Name: Davis, Street Address: 23 Cedar Dr, Zip Code: 49742, City: Jacksonville, Phone Number: 555-717-106-66
+
+Phone List for Category work:
+First Name: Mary
+First Name: Mia
+First Name: Sarah
+
+Mailing List for Category work:
+Category: 2, First Name: Mary, Last Name: Williams, Street Address: 78 Pine St, Zip Code: 12210, City: Los Angeles, Phone Number: 555-315-002-29
+Category: 2, First Name: Mia, Last Name: Thompson, Street Address: 67 Maple Ln, Zip Code: 64645, City: Los Angeles, Phone Number: 555-033-390-81
+Category: 2, First Name: Sarah, Last Name: Davis, Street Address: 89 Oak Rd, Zip Code: 82335, City: Chicago, Phone Number: 555-353-298-66
+
+Summary:
+Original Contact List Size: 10
+Phone List Size for Category friends: 3
+Mailing List Size for Category friends: 3
+Phone List Size for Category family: 4
+Mailing List Size for Category family: 4
+Phone List Size for Category work: 3
+Mailing List Size for Category work: 3
+[?2004h]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ ./hw03
+[?2004lOriginal Contact List:
+"Category: 0, First Name: Matthew, Last Name: Brown, Street Address: 67 Maple Ln, Zip Code: 62620, City: Las Vegas, Phone Number: 555-076-804-27"
+"Category: 2, First Name: Grace, Last Name: Williams, Street Address: 2 Birch St, Zip Code: 31400, City: Denver, Phone Number: 555-871-529-58"
+"Category: 1, First Name: Mary, Last Name: Jackson, Street Address: 10 Birch Ave, Zip Code: 82341, City: St. Louis, Phone Number: 555-833-892-54"
+"Category: 0, First Name: Olivia, Last Name: Taylor, Street Address: 123 Elm St, Zip Code: 42468, City: Nashville, Phone Number: 555-554-179-75"
+"Category: 2, First Name: James, Last Name: Garcia, Street Address: 4 Cedar Dr, Zip Code: 72001, City: Columbus, Phone Number: 555-463-709-44"
+"Category: 0, First Name: Isabella, Last Name: Smith, Street Address: 7 Maple Rd, Zip Code: 78741, City: Cincinnati, Phone Number: 555-384-428-99"
+"Category: 2, First Name: Ethan, Last Name: Williams, Street Address: 8 Birch Ave, Zip Code: 06056, City: Atlanta, Phone Number: 555-406-819-29"
+"Category: 0, First Name: James, Last Name: Moore, Street Address: 6 Maple Ln, Zip Code: 06862, City: Boston, Phone Number: 555-431-543-84"
+"Category: 1, First Name: Samuel, Last Name: Thomas, Street Address: 67 Maple Ln, Zip Code: 28096, City: Chicago, Phone Number: 555-813-758-75"
+"Category: 1, First Name: Emma, Last Name: Garcia, Street Address: 101 Pine Ln, Zip Code: 98403, City: Portland, Phone Number: 555-645-848-87"
+
+Phone List for Category friends:
+First Name: Matthew
+First Name: Olivia
+First Name: Isabella
+First Name: James
+
+Mailing List for Category friends:
+Category: 0, First Name: Matthew, Last Name: Brown, Street Address: 67 Maple Ln, Zip Code: 62620, City: Las Vegas, Phone Number: 555-076-804-27
+Category: 0, First Name: Olivia, Last Name: Taylor, Street Address: 123 Elm St, Zip Code: 42468, City: Nashville, Phone Number: 555-554-179-75
+Category: 0, First Name: Isabella, Last Name: Smith, Street Address: 7 Maple Rd, Zip Code: 78741, City: Cincinnati, Phone Number: 555-384-428-99
+Category: 0, First Name: James, Last Name: Moore, Street Address: 6 Maple Ln, Zip Code: 06862, City: Boston, Phone Number: 555-431-543-84
+
+Phone List for Category family:
+First Name: Mary
+First Name: Samuel
+First Name: Emma
+
+Mailing List for Category family:
+Category: 1, First Name: Mary, Last Name: Jackson, Street Address: 10 Birch Ave, Zip Code: 82341, City: St. Louis, Phone Number: 555-833-892-54
+Category: 1, First Name: Samuel, Last Name: Thomas, Street Address: 67 Maple Ln, Zip Code: 28096, City: Chicago, Phone Number: 555-813-758-75
+Category: 1, First Name: Emma, Last Name: Garcia, Street Address: 101 Pine Ln, Zip Code: 98403, City: Portland, Phone Number: 555-645-848-87
+
+Phone List for Category work:
+First Name: Grace
+First Name: James
+First Name: Ethan
+
+Mailing List for Category work:
+Category: 2, First Name: Grace, Last Name: Williams, Street Address: 2 Birch St, Zip Code: 31400, City: Denver, Phone Number: 555-871-529-58
+Category: 2, First Name: James, Last Name: Garcia, Street Address: 4 Cedar Dr, Zip Code: 72001, City: Columbus, Phone Number: 555-463-709-44
+Category: 2, First Name: Ethan, Last Name: Williams, Street Address: 8 Birch Ave, Zip Code: 06056, City: Atlanta, Phone Number: 555-406-819-29
+
+Summary:
+Original Contact List Size: 10
+Phone List Size for Category friends: 4
+Mailing List Size for Category friends: 4
+Phone List Size for Category family: 3
+Mailing List Size for Category family: 3
+Phone List Size for Category work: 3
+Mailing List Size for Category work: 3
+[?2004h]0;kim@ubuntu: ~/Documents/Homework/hw03[01;32mkim@ubuntu[00m:[01;34m~/Documents/Homework/hw03[00m$ [7mexit[27mexit
+[?2004lexit
+
+Script done on 2023-11-07 18:35:54-05:00 [COMMAND_EXIT_CODE="0"]
